@@ -1,5 +1,9 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { TbWorld } from "react-icons/tb";
+import { FiInstagram } from "react-icons/fi";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 
 type Inputs = {
   email: string;
@@ -13,7 +17,6 @@ const Login = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
@@ -22,16 +25,48 @@ const Login = () => {
         className="
         bg-[url(https://s3-alpha-sig.figma.com/img/4ee0/0006/3107c45a2adce01efe60a8d70e6ea4b2?Expires=1686528000&Signature=fKFWzA9lTvSQzhvVmEF-uTw9uCglvVRZgUNymHPaNERX9~UZQ5cfrjRrSf7pl2DoLnEK-aRY9rqyq1oYrJoEA4TKp~NVP4c~-1DONZUrBu8-z8-3A0qIq~Hn460Ooz7ibOdx8WMRKkogTEqLzF3guGna7WCm36~szrOwqLci07zeY2O6oiA6s1JRLI3ymy6Sb52puEed7z0tK-mjnSOgqHgO8hiPoigkaV3eTdRZRAvsV4nF68WWTb5F7kt8OF2QveG2HCfP4-rtIZK3-REMwP6cMXvEbwWv-P0-h89iX5W~O-rCBoUPrQY2JZ5mxaavZm7oxO-jr1TbortdXcDfjA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)]
         lg:h-[555px] lg:w-[620px] rounded-xl
-         text-center mx-auto
+         text-center mx-auto relative
         "
       >
-        <div></div>
+        <div>
+          <img
+            src="https://s3-alpha-sig.figma.com/img/3396/41d4/808899fc8f1395906b221d828ccbbd89?Expires=1686528000&Signature=ikvkWiUQRNMp5VzpHEIN78v2pHcxwEFTnPTmxTTY1UhPyT18ktPLsBLfl9fau9OG5cYvvu4FAxDa6phIkEFZuKaSxiSFiCmuspqyw8vQS7H~gOCBGnZ50CEcLqoD5qCb8TSjjzLgSqyZgh5pU-M7Xv7VcOqD5GclykLMhIdNPXFMmPJsUx5R2Vg43HzZaOWeVjqetykFMCqAn5lCvLdP2agrnoj5aYutX3AtMlRcT1fyCeu1zp7~JLz53pNMFNTeftO0NUyEbHfWrJWZXQ1WPgjgEY4Lc6DrKhRDWccIASZCorOj-jAq~7cRsOQshflElBWMX5Kfgaw6Rnzc6A7~jw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            alt=""
+            className="w-[64px] h-[22px] absolute top-2 left-3"
+          />
+        </div>
         {/* middle */}
-        <div></div>
+        <div>
+          <h2 className="text-start absolute bottom-40 left-3">
+            <span className="text-[#ffffff] font-semibold text-4xl">
+              100% Uptime
+            </span>
+            <br />
+            <span className="text-[#BFBFBF] font-semibold text-2xl">
+              Zero Infrastructures
+            </span>
+            <br />
+            <span className="text-[#BFBFBF] font-semibold text-2xl">
+              Management
+            </span>
+          </h2>
+        </div>
+
         {/* bottom position*/}
-        <div></div>
+        <div>
+          <div className="text-[#BFBFBF] flex items-center absolute bottom-5 left-3">
+            <TbWorld />
+            <p>aesthesia.com</p>
+          </div>
+          <div className="text-white flex text-xl absolute bottom-5 gap-2 right-3 ">
+            <FaLinkedinIn />
+            <FaFacebookF />
+            <FiInstagram />
+          </div>
+        </div>
       </div>
 
+      {/* from react hook from */}
       <div className="w-1/2 mx-auto text-center">
         <div className="text-center">
           <img
