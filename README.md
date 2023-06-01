@@ -1,6 +1,6 @@
 
 ## Live Link
-Hosted in Netlify -> [login page](https://assingment12-client.firebaseapp.com/)
+Hosted in Netlify -> [login page](https://designlogin.netlify.app/)
 
 
 ## Resources 
