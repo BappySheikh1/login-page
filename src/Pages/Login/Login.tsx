@@ -1,24 +1,11 @@
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+
 import { TbWorld } from "react-icons/tb";
 import { FiInstagram } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-
-type Inputs = {
-  email: string;
-  password: string;
-};
+import HookForm from "../HookForm/HookForm";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>();
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
   return (
     <div className="lg:flex items-center lg:w-[1280px] lg:h-[609px] bg-[#FFFFFF]">
       <div
@@ -50,6 +37,10 @@ const Login = () => {
               Management
             </span>
           </h2>
+
+          <div className="w-[20px] h-[6px] bg-white rounded-xl absolute bottom-36 left-3"></div>
+          <div className="w-[4.87px] h-[5.49px] bg-[#afacac] rounded-xl absolute bottom-36 left-9"></div>
+          <div className="w-[4.87px] h-[5.49px] bg-[#747272] rounded-xl absolute bottom-36 left-11"></div>
         </div>
 
         {/* bottom position*/}
@@ -79,39 +70,9 @@ const Login = () => {
           </h2>
           <p className="text-[#667085] mt-3 mb-6">Glad to see, Again!</p>
         </div>
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="border  border-[#464660] w-[360px] h-[49px] rounded-[10px] p-[20px] gap-[10px]  font-bold"
-            type="email"
-            placeholder="Enter your email"
-            {...register("email")}
-          />
-
-          <input
-            className="border mt-5 border-[#464660] w-[360px] h-[49px] rounded-[10px] p-[20px] gap-[10px]  font-bold"
-            type="password"
-            placeholder="Enter your password"
-            {...register("password", {
-              required: "This is required.",
-              minLength: {
-                value: 4,
-                message: "Min length is 8",
-              },
-            })}
-          />
-          <br />
-          {errors.password && (
-            <span className="text-red-600">This field is required</span>
-          )}
-          <br />
-          <input
-            className="bg-[#020100] mt-5 w-[360px] h-[53px] rounded-[10px] p-[20px] gap-[10px] text-white font-bold cursor-pointer "
-            type="submit"
-            value="Log In"
-          />
-        </form>
-
+        {/* React hookForm  start*/}
+        <HookForm />
+        {/* React hookForm  end*/}
         <p className="mt-24">
           <span className="text-[#667085]"> Don't have an account yet?</span>
           <span className="text-semibold text-[#08A593] cursor-pointer">
